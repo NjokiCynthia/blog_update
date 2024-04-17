@@ -1,6 +1,8 @@
-package com.example.blogs;
+package com.example.blogs.controller;
 
 
+import com.example.blogs.token_util.JwtTokenUtil;
+import com.example.blogs.mainClasses.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.persistence.ElementCollection;
@@ -16,7 +18,7 @@ import java.util.regex.Matcher;
 public class UserController {
 
     @Autowired
-    UserRespository UserRespository;
+    com.example.blogs.repository.UserRespository UserRespository;
 
     User loggedInUser;
 
