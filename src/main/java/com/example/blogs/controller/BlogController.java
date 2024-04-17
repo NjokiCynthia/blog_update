@@ -104,12 +104,12 @@ public class BlogController {
     @PutMapping("/blog/{id}")
     public Blog update(@PathVariable String id, @RequestBody Map<String, String> body){
         try {
-            int taskId = Integer.parseInt(body.get("id"));
-            // getting task
-            Blog task = blogRepository.findById(taskId).orElse(null);
+            int blogId = Integer.parseInt(body.get("id"));
+            // getting blog
+            Blog task = blogRepository.findById(blogId).orElse(null);
 
             if (task == null) {
-                throw new CustomException(404, "Task not found");
+                throw new CustomException(404, "Blog not found");
             }
 
             // Check if specific fields are provided in the request body and update them
